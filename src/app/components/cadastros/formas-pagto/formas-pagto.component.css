@@ -1,0 +1,19 @@
+.width-card {
+    max-width: 95%;
+  }
+
+  .centraliza {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .spaceBetween{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  
