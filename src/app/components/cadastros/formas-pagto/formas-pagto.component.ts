@@ -16,8 +16,7 @@ export class FormasPagtoComponent implements OnInit {
 
   constructor(private frmPagtoService : FormasPagtoService) {
     this.frmPagtoService.getFormasPagamento().subscribe({
-      next: (frmPagto) => { console.log('retorno api => ', frmPagto); 
-                            this.dadosFrmPagto = frmPagto;},
+      next: (frmPagto) => { this.dadosFrmPagto = frmPagto;},
       error: (response) => {console.log('response  error => ', response);}
     });
 

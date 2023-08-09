@@ -6,21 +6,21 @@
     </div>
     <li style="--i:0;--clr:#00b0fe;">
         <div matTooltip="{{this.toolTipEdit.descricao}}">
-            <a href="#">
+            <a (click)="acaoEditar()">
                 <mat-icon aria-hidden="false" aria-label="set" fontIcon="settings"></mat-icon>
             </a>
         </div>
     </li>
     <li style="--i:1;--clr:#0f0380;">
-        <div matTooltip="View">
-            <a href="#">
+        <div matTooltip="{{this.toolTipConsultar.descricao}}">
+            <a (click)="acaoConsultar()">
                 <mat-icon aria-hidden="false" aria-label="photo_camera" fontIcon="photo_camera"></mat-icon>
             </a>
         </div>
     </li>
     <li style="--i:2;--clr:#ff2972;">
-        <div matTooltip="Delete">
-            <a href="#">
+        <div matTooltip="{{this.toolTipExcluir.descricao}}">
+            <a (click)="acaoExcluir()">
                 <mat-icon aria-hidden="false" aria-label="delete" fontIcon="delete"></mat-icon>    
             </a>
         </div>

@@ -2,22 +2,6 @@
 <div class="form800">
 
     
-    <!-- <mat-table [dataSource]="dataGrid" class="mat-elevation-z8">
-        <ng-container matColumnDef="descricao">
-            <mat-header-cell *matHeaderCellDef> Descricao. </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.descricao}} </mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef="ativo">
-            <mat-header-cell *matHeaderCellDef> Ativo </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.ativo}} </mat-cell>
-        </ng-container>
-
-        <mat-header-row *matHeaderRowDef="columnsGrid"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: columnsGrid;"></mat-row>
-    </mat-table>
- -->
-
  <table mat-table [dataSource]="dataGrid" class="mat-elevation-z8">
     <!-- Position Column -->
     <ng-container *ngFor="let colsGrid of columnsHeader" matColumnDef="{{colsGrid}}">
@@ -28,7 +12,13 @@
     <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef> Ação </th>
         <td mat-cell *matCellDef="let element">
-            <app-buttom-plus [btns]="cfgBtnPlus()"></app-buttom-plus>
+            <app-buttom-plus [btns]="cfgBtnPlus()" 
+                             [chaveConsulta]="element.id" 
+                             (eventoConsultar)="consultarFormaPagto($event)"
+                             (eventoEditar)="editarFormaPagto($event)"
+                             (eventoExcluir)="excluirFormaPagto($event)">
+            </app-buttom-plus>
+            
 
         </td>
     </ng-container>

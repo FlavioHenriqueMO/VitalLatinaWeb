@@ -12,14 +12,28 @@ export class FormasPagtodetalheComponent implements OnInit{
   @Input() dataGrid : any ;
 
   ngOnInit(): void {
-    console.log(' colunas no formulario detalhe => ', this.columnsGrid);
-    console.log(' dados no formulario detalhe => ', this.dataGrid);
   }
 
 
   cfgBtnPlus(): buttomPlusCfg {
     const cfgBtn =  new buttomPlusCfg();
     cfgBtn.btnEditar.toolTip.descricao = 'Editar';
+    cfgBtn.btnVisualizar.toolTip.descricao = 'Visualizar Dados';
+    cfgBtn.btnExcluir.toolTip.descricao = 'Eliminar';
     return cfgBtn;
   }
+ 
+  excluirFormaPagto(chave:string){
+    console.log('Forma de pagamento excluida => ', chave);
+  }
+
+  editarFormaPagto(chave:string){
+    console.log('Forma de pagamento editada => ', chave);
+  }
+
+  consultarFormaPagto(chave:string){
+    console.log('Forma de pagamento Consultada => ', chave);
+  }
+
+
 }
