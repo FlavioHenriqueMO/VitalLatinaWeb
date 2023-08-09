@@ -22,7 +22,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSidenavModule} from '@angular/material/sidenav';
-import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+import {MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
@@ -55,6 +56,7 @@ import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
     MatDialogModule,
     MatSidenavModule,
     MatNativeDateModule,
+    MatSnackBarModule,
     
   ],
   providers: [
