@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-menuheader',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./menuheader.component.css']
 })
 export class MenuheaderComponent {
-
+  @Input() TituloMenu : string = ''; 
+  
 }

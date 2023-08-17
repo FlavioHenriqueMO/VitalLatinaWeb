@@ -16,6 +16,8 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { LoadingInterceptor } from './loading.interceptor';
 import { ButtomPlusComponent } from './share/buttom-plus/buttom-plus.component';
+import { FormasPagtoEditViewComponent } from './components/cadastros/formas-pagto/formas-pagto-edit-view/formas-pagto-edit-view.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,14 +30,17 @@ import { ButtomPlusComponent } from './share/buttom-plus/buttom-plus.component';
     MenuheaderComponent,
     FormasPagtodetalheComponent,
     SpinnerComponent,
-    ButtomPlusComponent
+    ButtomPlusComponent,
+    FormasPagtoEditViewComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModuleModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [ { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi:true}],
   bootstrap: [AppComponent]

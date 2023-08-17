@@ -23,6 +23,7 @@ export class FormasPagtoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
   }
 
 }

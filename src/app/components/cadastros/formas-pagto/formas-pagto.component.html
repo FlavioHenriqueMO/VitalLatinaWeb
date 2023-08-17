@@ -1,23 +1,25 @@
+<div class="container-fluid">
 
-<div class="mt-20">
+    <div class="mt-20">
 
-    <mat-card class="width-card">
-        <div class="painelTitulo">
-            <div class="spaceBetween">
-                <div>{{titulo}}</div>
-                <button mat-mini-fab matTooltip="Incluir" color="#FCAF17" aria-label="Example mini fab with a heart icon">
-                    <mat-icon>add</mat-icon>
-                  </button>
+        <mat-card class="width-card" style="height: 600px">
+            <div class="painelTitulo">
+                <div class="spaceBetween">
+                    <div>{{titulo}}</div>
+                    <button mat-mini-fab matTooltip="Incluir" color="#FCAF17"
+                        aria-label="Example mini fab with a heart icon">
+                        <mat-icon>add</mat-icon>
+                    </button>
+                </div>
             </div>
-        </div>
-            <app-formas-pagtodetalhe [columnsGrid]="colGrid" [columnsHeader]="colHeader" [dataGrid]="dadosFrmPagto"></app-formas-pagtodetalhe>
-        
-        <mat-card-actions>
-            <button mat-button>LIKE</button>
-            <button mat-button>SHARE</button>
-        </mat-card-actions>
-    </mat-card>
+            <app-formas-pagtodetalhe [columnsGrid]="colGrid" [columnsHeader]="colHeader"
+                [dataGrid]="dadosFrmPagto"></app-formas-pagtodetalhe>
 
+            <mat-card-actions>
+                <button mat-button>LIKE</button>
+                <button mat-button>SHARE</button>
+            </mat-card-actions>
+        </mat-card>
+
+    </div>
 </div>
-
-

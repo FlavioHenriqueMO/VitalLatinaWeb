@@ -13,7 +13,7 @@ html, body {
   header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, .16);
     grid-column: 1/-1;
-    background: linear-gradient(45deg, #012653, #dfdfee);
+    background: linear-gradient(45deg, #0F0B38, #012653);
   }
   
   aside {

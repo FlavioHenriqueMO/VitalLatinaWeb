@@ -21,6 +21,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     padding: 7px 10px;
 }
 
+.painelTituloModal {
+    background: #FCAF17;
+    border-radius: 10px ;
+    height: 40px;
+    max-height: 40px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 7px 10px;
+}
+
+
 .form600 {
     min-width: 600px;
 }
