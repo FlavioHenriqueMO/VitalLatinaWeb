@@ -13,9 +13,11 @@ export class LoaderService {
 
   hide(): void {
     this.loading.next(false);
+    console.log('>>>>>> Loading off!!');
   }
   show(): void {
     this.loading.next(true);
+    console.log('>>>>>> Loading On!!!');
   }
 
 

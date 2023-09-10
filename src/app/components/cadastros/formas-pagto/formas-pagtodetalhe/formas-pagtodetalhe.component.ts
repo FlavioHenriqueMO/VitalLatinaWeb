@@ -1,8 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { buttomPlusCfg } from 'src/app/share/buttom-plus/buttom-plus-configModel';
 import { FormasPagtoEditViewComponent } from '../formas-pagto-edit-view/formas-pagto-edit-view.component';
+import { formaPagto } from 'src/models/formaPagto';
 
 @Component({
   selector: 'app-formas-pagtodetalhe',
@@ -42,7 +43,25 @@ export class FormasPagtodetalheComponent implements OnInit{
     //   duration: 3000
     // });
 
-    let dialogFormasPagto = this.dialog.open(FormasPagtoEditViewComponent, { height:'250px', width:'600px'})
+
+    const dados = new formaPagto();
+    dados.id = 1;
+    dados.acao = 'edit';
+    dados.ativo = true;
+    dados.descricao = 'Descrição Padrão';
+
+    const dialogCfg = new MatDialogConfig();
+    dialogCfg.disableClose = true;
+    dialogCfg.autoFocus = true;
+    dialogCfg.height = '250px';
+    dialogCfg.width  = '600px'; 
+    dialogCfg.data = dados; //new formaPagto();
+
+
+    let dialogFormasPagto = this.dialog.open(FormasPagtoEditViewComponent, dialogCfg);
+    dialogFormasPagto.afterClosed().subscribe( (result)=> {
+      console.log('>>> FormasPagto Detalhe :) => ', result);
+    });
 
 
   }
