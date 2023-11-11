@@ -67,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "VitalLatinaWeb:build:production"
+              "buildTarget": "VitalLatinaWeb:build:production"
             },
             "development": {
-              "browserTarget": "VitalLatinaWeb:build:development"
+              "buildTarget": "VitalLatinaWeb:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -78,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "VitalLatinaWeb:build"
+            "buildTarget": "VitalLatinaWeb:build"
           }
         },
         "test": {
