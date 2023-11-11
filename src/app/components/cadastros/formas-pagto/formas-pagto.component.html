@@ -2,12 +2,11 @@
 
     <div class="mt-20">
 
-        <mat-card class="width-card" style="height: 600px">
+        <mat-card class="width-card">
             <div class="painelTitulo">
                 <div class="spaceBetween">
-                    <div>{{titulo}}</div>
-                    <button mat-mini-fab matTooltip="Incluir" color="#FCAF17"
-                        aria-label="Example mini fab with a heart icon">
+                    <div class="ms-2">{{titulo}}</div>
+                    <button mat-mini-fab matTooltip="Incluir" color="#FCAF17" aria-label="">
                         <mat-icon>add</mat-icon>
                     </button>
                 </div>
@@ -15,10 +14,10 @@
             <app-formas-pagtodetalhe [columnsGrid]="colGrid" [columnsHeader]="colHeader"
                 [dataGrid]="dadosFrmPagto"></app-formas-pagtodetalhe>
 
-            <mat-card-actions>
+            <!-- <mat-card-actions>
                 <button mat-button>LIKE</button>
                 <button mat-button>SHARE</button>
-            </mat-card-actions>
+            </mat-card-actions> -->
         </mat-card>
 
     </div>

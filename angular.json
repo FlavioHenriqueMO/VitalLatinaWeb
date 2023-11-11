@@ -5,7 +5,13 @@
   "projects": {
     "VitalLatinaWeb": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "skipTests": true,
+          "standalone": true,
+          "displayBlock": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",

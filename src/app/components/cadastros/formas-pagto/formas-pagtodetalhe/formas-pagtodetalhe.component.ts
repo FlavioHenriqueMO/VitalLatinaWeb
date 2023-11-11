@@ -13,12 +13,23 @@ import { formaPagto } from 'src/models/formaPagto';
 export class FormasPagtodetalheComponent implements OnInit{
   @Input() columnsGrid! : string[];
   @Input() columnsHeader! : string[];
-  @Input() dataGrid : any ;
+  @Input() dataGrid! : formaPagto[] ;
+
+  private dialogCfg = new MatDialogConfig();
+  
+  configuraDialog() {
+    this.dialogCfg.disableClose = true;
+    this.dialogCfg.autoFocus = true;
+    this.dialogCfg.height = '250px';
+    this.dialogCfg.width  = '600px'; 
+
+  }
 
 
   constructor(private _snackbar : MatSnackBar, private dialog: MatDialog){}
 
   ngOnInit(): void {
+    this.configuraDialog();
   }
 
 
@@ -30,43 +41,24 @@ export class FormasPagtodetalheComponent implements OnInit{
     return cfgBtn;
   }
  
-  excluirFormaPagto(chave:string){
+  excluirFormaPagto(chave: formaPagto){
     console.log('Forma de pagamento excluida => ', chave);
     this._snackbar.open(`Forma de Pagamento excluida ${chave}`, 'Undo', {
       duration: 3000
     });
   }
 
-  editarFormaPagto(chave:string){
-    console.log('Forma de pagamento editada => ', chave);
-    // this._snackbar.open(`Forma de Pagamento EDITADA ${chave}`, 'Undo', {
-    //   duration: 3000
-    // });
+  editarFormaPagto(chave: formaPagto){
 
+    this.dialogCfg.data = chave; 
 
-    const dados = new formaPagto();
-    dados.id = 1;
-    dados.acao = 'edit';
-    dados.ativo = true;
-    dados.descricao = 'Descrição Padrão';
-
-    const dialogCfg = new MatDialogConfig();
-    dialogCfg.disableClose = true;
-    dialogCfg.autoFocus = true;
-    dialogCfg.height = '250px';
-    dialogCfg.width  = '600px'; 
-    dialogCfg.data = dados; //new formaPagto();
-
-
-    let dialogFormasPagto = this.dialog.open(FormasPagtoEditViewComponent, dialogCfg);
+    let dialogFormasPagto = this.dialog.open(FormasPagtoEditViewComponent, this.dialogCfg);
     dialogFormasPagto.afterClosed().subscribe( (result)=> {
       console.log('>>> FormasPagto Detalhe :) => ', result);
     });
-
-
   }
 
-  consultarFormaPagto(chave:string){
+  consultarFormaPagto(chave: formaPagto){
     console.log('Forma de pagamento Consultada => ', chave);
     this._snackbar.open(`Forma de Pagamento CONSULTADA ${chave}`, 'Undo', {
       duration: 3000

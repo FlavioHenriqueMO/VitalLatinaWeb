@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormasPagtoService } from './formas-pagto.service';
 import { LoaderService } from 'src/app/share/services/loader.service';
+import { formaPagto } from 'src/models/formaPagto';
 
 @Component({
   selector: 'app-formas-pagto',
@@ -9,9 +10,9 @@ import { LoaderService } from 'src/app/share/services/loader.service';
 })
 export class FormasPagtoComponent implements OnInit {
   titulo = 'Formas de Pagamento';
-  dadosFrmPagto : any = [];
-  colGrid : string[] = ['descricao', 'ativo', 'id', 'action'];
-  colHeader : string[] = ['descricao', 'ativo', 'id'];
+  dadosFrmPagto : formaPagto[] = [];
+  colGrid : string[] = ['descricao', 'ativo',  'action'];
+  colHeader : string[] = ['descricao', 'ativo'];
 
 
   constructor(private frmPagtoService : FormasPagtoService) {

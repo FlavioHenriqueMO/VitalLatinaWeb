@@ -40,4 +40,19 @@ export class FormasPagtoService {
      );
   }
 
+  salvarFormaPagto(frmPgto : formaPagto) {
+    return this.http.post<formaPagto>(this.urlApi, frmPgto)
+    .pipe(
+      first()
+    );    
+  }
+
+  excluirFormaPagto(frmPgto : formaPagto) {
+    return this.http.post<formaPagto>(this.urlApi, frmPgto)
+    .pipe(
+      first()
+    );    
+  }
+
+
 }
